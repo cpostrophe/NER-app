@@ -34,13 +34,15 @@ Data imported from BikeReg should be exported to a form that can be manipulated 
     8. RUSA number/status
     9. emergency contact
 2. Payment provided (if not pre-registered)
-3. Ride Status
+    1. Payment amount
+    2. Payment method (cash/check)
+4. Ride Status
     * Completed
     * DNS
     * DNF
     * DQ
     * Other
-4. All associated route card stamps
+5. All associated route card stamps
 
 At the end of an event, the form will export its data in a fashion that can then be imported into NER-App.
 
@@ -55,4 +57,4 @@ Separate from day of registrations, the admin or brevet organizer should have th
 2.  Pre-ride
 3.  Controle staff
 
-Volunteers can have more than one role for an event.  A pre-ride volunteer should also be treated as a rider if they are riding for mileage credit, and so their data should be included in the ride results.
+Volunteers can have more than one role for an event.  A pre-ride volunteer should also be treated as a rider if they are riding for mileage credit, and so their data should be included in the ride results. 
