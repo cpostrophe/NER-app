@@ -58,3 +58,5 @@ Separate from day of registrations, the admin or brevet organizer should have th
 3.  Controle staff
 
 Volunteers can have more than one role for an event.  A pre-ride volunteer should also be treated as a rider if they are riding for mileage credit, and so their data should be included in the ride results. 
+
+## User Account Management

@@ -1,0 +1,75 @@
+<h1>NER-APP Event Support Model</h1>
+
+<h2>Overview</h2>
+
+<p>The intention is for the NER-App to supplement and improve an inefficient paper-based process that is used for tracking event data.  This begins with importing data from BikeReg, where half of an event's riders will pre-register.  This data will be the basis for an offline form that will be used for tracking rider progress during an event.  On the day of the event, the offline form will also accept data for day-of-registration participants and will then be used for recording times and status for riders through the event.  At the end of the event, the data in the form will be imported back into the NER-app.  This updated data will then be available to riders looking to review their historical results.</p>
+
+<h2>BikeReg Import</h2>
+
+<p>Importing data from BikeReg will, by default, take the form of parsing a CSV file exported from bikereg.  The import process shall read data from this CSV into a staging location where an admin will review the inbound data, confirm matches to existing data, confirm new records, and reject invalid data.  The intention for the import is to:</p>
+
+<ol>
+<li>add new User records to the application where individuals do not exist.</li>
+<li>add additional data to a User's record if that data was previously null.</li>
+<li>otherwise match inbound data to existing records based on the following criteria (TBD):
+<ol>
+<li>email address</li>
+<li>first name</li>
+<li>last name</li>
+<li>date of birth</li>
+</ol></li>
+<li>spawn additional Registrations and RouteControlStamps for all registered riders</li>
+</ol>
+
+<p>If data discrepancies exist between user data BikeReg and NER-App, NER-App should be considered the source of truth.</p>
+
+<h2>Offline Form</h2>
+
+<p>Data imported from BikeReg should be exported to a form that can be manipulated or edited offline.  Currently, the preference for this form is as an Excel spreadsheet.  The form will capture:</p>
+
+<ol>
+<li>Rider Registration Data
+<ol>
+<li>email address</li>
+<li>first name</li>
+<li>last name</li>
+<li>phone number</li>
+<li>date of birth</li>
+<li>address data</li>
+<li>NER number/status</li>
+<li>RUSA number/status</li>
+<li>emergency contact</li>
+</ol></li>
+<li>Payment provided (if not pre-registered)
+<ol>
+<li>Payment amount</li>
+<li>Payment method (cash/check)</li>
+</ol></li>
+<li>Ride Status
+<ul>
+<li>Completed</li>
+<li>DNS</li>
+<li>DNF</li>
+<li>DQ</li>
+<li>Other</li>
+</ul></li>
+<li>All associated route card stamps</li>
+</ol>
+
+<p>At the end of an event, the form will export its data in a fashion that can then be imported into NER-App.</p>
+
+<h2>Offline Form Import</h2>
+
+<p>Similar to BikeReg Import, the data of the Offline Form should be imported into a staging location in the NER-App  where an admin will review the inbound data, confirm matches to existing data for day-of-registrants, confirm new records and reject invalid data.</p>
+
+<h2>Volunteer Tracking</h2>
+
+<p>Separate from day of registrations, the admin or brevet organizer should have the ability to assign NER-APP users as volunteers for an event.  Volunteers can be assigned to any one of the following roles:</p>
+
+<ol>
+<li>Arrowing</li>
+<li>Pre-ride</li>
+<li>Controle staff</li>
+</ol>
+
+<p>Volunteers can have more than one role for an event.  A pre-ride volunteer should also be treated as a rider if they are riding for mileage credit, and so their data should be included in the ride results. </p>
